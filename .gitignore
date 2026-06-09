@@ -1,0 +1,39 @@
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Banco de dados SQLite (não commitar o banco em produção)
+*.db
+*.sqlite
+*.sqlite3
+
+# Ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build do React
+frontend/build/
+
+# Logs
+logs
+*.log
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporários
+tmp/
+temp/

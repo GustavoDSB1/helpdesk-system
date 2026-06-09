@@ -1,0 +1,315 @@
+.ticket-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.btn-back:hover {
+  background-color: #f0f0f0;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.ticket-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.ticket-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ticket-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.ticket-id {
+  color: #7f8c8d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.ticket-info-header h1 {
+  color: #2c3e50;
+  margin: 0.5rem 0 0 0;
+  font-size: 1.8rem;
+}
+
+.ticket-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ticket-description {
+  margin-bottom: 2rem;
+}
+
+.ticket-description h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.ticket-description p {
+  color: #555;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.ticket-metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metadata-item strong {
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.metadata-item span {
+  color: #555;
+}
+
+.status-actions {
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.status-actions h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #e67e22;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #229954;
+}
+
+.btn-info {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: #2980b9;
+}
+
+.comments-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.comments-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.no-comments {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 2rem;
+}
+
+.comment-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #3498db;
+}
+
+.comment-internal {
+  background: #fff3cd;
+  border-left-color: #f39c12;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comment-author strong {
+  color: #2c3e50;
+}
+
+.comment-role {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.internal-badge {
+  background-color: #f39c12;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.comment-content {
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.add-comment-card {
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.add-comment-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.add-comment-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-comment-card textarea {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.add-comment-card textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+.checkbox-group input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: 1rem;
+}
+
+.error-container p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
