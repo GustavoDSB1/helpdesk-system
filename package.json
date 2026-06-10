@@ -1,0 +1,32 @@
+{
+  "name": "helpdesk-system",
+  "version": "1.0.0",
+  "description": "Sistema Help Desk completo",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "init-db": "cd backend && node src/database/init.js",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "start-backend": "cd backend && npm run dev",
+    "start-frontend": "cd frontend && npm start"
+  },
+  "keywords": [
+    "helpdesk",
+    "tickets",
+    "support"
+  ],
+  "author": "Hopital",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoDSB1/helpdesk-system.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GustavoDSB1/helpdesk-system/issues"
+  },
+  "homepage": "https://github.com/GustavoDSB1/helpdesk-system#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

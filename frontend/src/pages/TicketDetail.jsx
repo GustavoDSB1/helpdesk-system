@@ -194,16 +194,17 @@ const TicketDetail = () => {
                   <span>{ticket.assigned_name}</span>
                 </div>
               )}
-              <div className="metadata-item">
-                <strong>📅 Criado em:</strong>
-                <span>{new Date(ticket.created_at).toLocaleString('pt-BR')}</span>
-              </div>
+                <div className="metadata-item">
+                  <strong>📅 Criado em:</strong>
+                  <span>{ticket.created_at}</span>
+                </div>
               {ticket.resolved_at && (
                 <div className="metadata-item">
                   <strong>✅ Resolvido em:</strong>
-                  <span>{new Date(ticket.resolved_at).toLocaleString('pt-BR')}</span>
-                </div>
+                  <span>{ticket.resolved_at}</span>
+                 </div>
               )}
+
             </div>
 
             {/* Ações de Status */}
@@ -275,8 +276,8 @@ const TicketDetail = () => {
                         {comment.is_internal && (
                           <span className="internal-badge">🔒 Interno</span>
                         )}
-                        <span className="comment-date">
-                          {new Date(comment.created_at).toLocaleString('pt-BR')}
+                       <span className="comment-date">
+                         {comment.created_at}
                         </span>
                       </div>
                     </div>

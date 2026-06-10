@@ -171,7 +171,7 @@ const Dashboard = () => {
                           {getStatusBadge(ticket.status).text}
                         </span>
                       </td>
-                      <td>{new Date(ticket.created_at).toLocaleDateString('pt-BR')}</td>
+                      <td>{ticket.created_at || '-'}</td>
                       <td>
                         <button
                           className="btn-icon"

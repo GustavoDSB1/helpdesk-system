@@ -19,10 +19,12 @@ const TicketList = () => {
   useEffect(() => {
     loadCategories();
     loadTickets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     loadTickets();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   const loadCategories = async () => {
@@ -202,7 +204,7 @@ const TicketList = () => {
                     </span>
                   </div>
                   <span className="ticket-date">
-                    {new Date(ticket.created_at).toLocaleDateString('pt-BR')}
+                    {ticket.created_at}
                   </span>
                 </div>
               </div>
