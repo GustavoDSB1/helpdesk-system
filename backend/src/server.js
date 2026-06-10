@@ -5,7 +5,9 @@ import authRoutes from './routes/authRoutes.js';
 import ticketRoutes from './routes/ticketRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
-import initDatabase from './config/initDatabase.js';
+import userRoutes from './routes/userRoutes.js';
+import { initDatabase } from '../database/init.js'; 
+import open from 'open';
 
 dotenv.config();
 
@@ -28,6 +30,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/users', userRoutes);
 
 // Rota de health check
 app.get('/api/health', (req, res) => {
@@ -54,16 +57,24 @@ app.use((err, req, res, next) => {
 // Inicializar banco e servidor
 const startServer = async () => {
   try {
-    // Inicializar banco de dados
     await initDatabase();
     
-    // Iniciar servidor
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
+      const healthUrl = `http://localhost:${PORT}/api/health`;
+      
       console.log('\n🚀 ========================================');
       console.log(`✅ Servidor rodando na porta ${PORT}`);
-      console.log(`✅ API: http://localhost:${PORT}/api`);
-      console.log(`✅ Health Check: http://localhost:${PORT}/api/health`);
+      console.log(`💻 Local: http://localhost:${PORT}/api`);
+      console.log(`🌐 Rede: http://192.168.0.15:${PORT}/api`);
+      console.log(`🔍 Health: ${healthUrl}`);
       console.log('🚀 ========================================\n');
+      
+      // 🔥 Abrir navegador automaticamente
+      open(healthUrl).then(() => {
+        console.log('🌐 Navegador aberto automaticamente!\n');
+      }).catch(() => {
+        console.log('⚠️  Não foi possível abrir o navegador automaticamente\n');
+      });
     });
   } catch (error) {
     console.error('❌ Erro ao iniciar servidor:', error);

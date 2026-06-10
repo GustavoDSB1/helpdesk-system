@@ -4,7 +4,7 @@ import {
   addComment,
   getCommentsByTicket
 } from '../controllers/commentController.js';
-import { authenticate } from '../middleware/auth.js';
+import { authenticateToken } from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ const commentValidation = [
 ];
 
 // Todas as rotas requerem autenticação
-router.use(authenticate);
+router.use(authenticateToken);
 
 // Rotas
 router.post('/', commentValidation, addComment);

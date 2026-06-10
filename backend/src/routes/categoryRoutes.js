@@ -1,23 +1,32 @@
 import express from 'express';
-import { body } from 'express-validator';
 import {
   getCategories,
-  createCategory
+  getCategoryById,
+  createCategory,
+  updateCategory,
+  deleteCategory
 } from '../controllers/categoryController.js';
-import { authenticate, authorize } from '../middleware/auth.js';
+import { authenticateToken, authorizeRoles } from '../middleware/auth.js';
 
 const router = express.Router();
 
-// Validações
-const categoryValidation = [
-  body('name').trim().notEmpty().withMessage('Nome é obrigatório'),
-  body('department').isIn(['TI', 'Manutenção', 'Outros']).withMessage('Departamento inválido')
-];
+// ========================================
+// ROTAS DE CATEGORIAS
+// ========================================
 
-// Listar categorias (requer autenticação)
-router.get('/', authenticate, getCategories);
+// Listar todas as categorias (público)
+router.get('/', getCategories);
 
-// Criar categoria (apenas admin)
-router.post('/', authenticate, authorize('admin'), categoryValidation, createCategory);
+// Ver detalhes de uma categoria (público)
+router.get('/:id', getCategoryById);
+
+// Criar nova categoria (apenas admin)
+router.post('/', authenticateToken, authorizeRoles('admin'), createCategory);
+
+// Atualizar categoria (apenas admin)
+router.put('/:id', authenticateToken, authorizeRoles('admin'), updateCategory);
+
+// Deletar categoria (apenas admin)
+router.delete('/:id', authenticateToken, authorizeRoles('admin'), deleteCategory);
 
 export default router;
